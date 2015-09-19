@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+  <title>Paypal Demo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel=stylesheet href="{% static "paypal_app/main.css"%}">
+</head>
+<body>
+<h2>Paypal Adaptive Payments API DEMO</h2>
+<p>Type in the email address you want to send money to as well as dollars without the $-sign: </p>
+<div class="container">
+  <form method="post" action="">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+</br>
+<p>After you hit submit you're redirected to PayPal's payment page [sandbox, not real]</p>
+</body>
+</html>
