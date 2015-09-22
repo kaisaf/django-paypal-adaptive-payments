@@ -3,7 +3,7 @@ from django.views.generic import View
 from .payment import payment
 from .forms import SendMoneyForm
 
-# # Create your views here.
+
 class IndexView(View):
     def get(self, request):
         form = SendMoneyForm()
@@ -15,9 +15,11 @@ class IndexView(View):
         redirect_address = payment(recipient_email, dollars)
         return redirect(redirect_address)
 
+
 class SuccessView(View):
     def get(self, request):
         return render(request, 'paypal_app/success.html')
+
 
 class CancelView(View):
     def get(self, request):
